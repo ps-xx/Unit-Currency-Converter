@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+    Unit & Currency Converter
+    Author: Pablo.ejs (@ps-xx)
+    GitHub: https://github.com/ps-xx
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <header>
+                <h1>Unit Converter</h1>
+                <p class="subtitle">Convert between different units instantly</p>
+            </header>
+
+            <div class="converter-section">
+                <div class="category-selector">
+                    <label for="category">Category:</label>
+                    <select id="category" aria-label="Select conversion category">
+                        <option value="length">Length</option>
+                        <option value="weight">Weight</option>
+                        <option value="temperature">Temperature</option>
+                        <option value="currency">Currency</option>
+                    </select>
+                </div>
+
+                <div id="statusMessage" class="status-message" role="alert" aria-live="polite"></div>
+
+                <div class="conversion-inputs">
+                    <div class="input-group">
+                        <label for="fromUnit">From:</label>
+                        <select id="fromUnit" aria-label="Select source unit"></select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="inputValue">Value:</label>
+                        <input 
+                            type="number" 
+                            id="inputValue" 
+                            placeholder="Enter value"
+                            step="any"
+                            aria-label="Enter value to convert"
+                        >
+                    </div>
+
+                    <button id="switchBtn" class="switch-btn" aria-label="Switch units">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M7 16V4M7 4L3 8M7 4L11 8M17 8V20M17 20L21 16M17 20L13 16"/>
+                        </svg>
+                    </button>
+
+                    <div class="input-group">
+                        <label for="toUnit">To:</label>
+                        <select id="toUnit" aria-label="Select target unit"></select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="resultValue">Result:</label>
+                        <div class="result-container">
+                            <input 
+                                type="text" 
+                                id="resultValue" 
+                                readonly
+                                placeholder="Result will appear here"
+                                aria-label="Conversion result"
+                            >
+                            <button id="copyBtn" class="copy-btn" aria-label="Copy result to clipboard" title="Copy to clipboard">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
